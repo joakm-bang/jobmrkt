@@ -1,0 +1,23 @@
+
+<!doctype html>
+<html lang="en-GB">
+	<head>
+		<title>New bounty</title> 
+	</head>
+	
+	<body>
+		
+		<form action="{% url 'create_bounty' %}" method="post">
+			{% csrf_token %}
+			<table>
+				{{ form.as_table }}
+			</table>
+			<input type="submit" value="Submit" />
+		</form>
+		
+		<div id="status">
+			<p>{{ status }}</p>
+		</div>
+
+	</body>
+</html>
